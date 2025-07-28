@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+
+
+		<property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mariadb://localhost:3306/strutsamit</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+
+
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="show_sql">true</property>
+
+		<property name="c3p0.min_size">5</property>
+		<property name="c3p0.max_size">50</property>
+		<property name="c3p0.timeout">18000</property>
+		<property name="c3p0.max_statements">50</property>
+
+
+		<property name="c3p0.idle_test_period">10</property>
+
+		<property name="hibernate.id.new_generator_mappings">false</property>
+		<property name="cache.provider_class">
+			org.hibernate.cache.EhCacheProvider</property>
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.use_query_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">
+			org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+
+		<mapping class="com.project.model.User" />
+		<mapping class="com.project.model.HelpTicket" />
+		<mapping class="com.project.model.TicketComment" />
+
+	</session-factory>
+</hibernate-configuration>

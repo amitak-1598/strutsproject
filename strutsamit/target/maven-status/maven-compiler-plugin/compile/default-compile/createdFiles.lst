@@ -1,0 +1,10 @@
+com\project\model\HelpTicket.class
+com\project\strutsamit\util\TicketDao.class
+com\project\model\TicketType.class
+com\project\strutsamit\HelloAction.class
+com\project\model\TicketComment.class
+com\project\strutsamit\util\HibernateUtil.class
+com\project\model\TicketStatus.class
+com\project\model\User.class
+com\project\strutsamit\util\HelpTicketMain.class
+com\project\strutsamit\Main.class
