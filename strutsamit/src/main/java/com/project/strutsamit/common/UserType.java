@@ -1,0 +1,5 @@
+package com.project.strutsamit.common;
+
+public enum UserType {
+	SUPERADMIN, ADMIN, MERCHANT, BUYER, ACQUIRER,POSMERCHANT,SUBUSER,RESELLER,SUBADMIN,SUBACQUIRER,ASSOCIATE
+}

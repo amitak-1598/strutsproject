@@ -1,0 +1,1040 @@
+.loader {
+	position: fixed;
+	opacity: 1;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.loaderInner {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	border: 16px solid #efefef;
+	border-radius: 50%;
+	border-top: 16px solid #0aa10a;
+	border-bottom: 16px solid #ff9900;
+	width: 120px;
+	height: 120px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+	top: 38%;
+	left: 50%;
+	margin-top: -60px;
+	margin-left: -60px;
+}
+
+.loader .approvedNotification {
+	text-align: center;
+	position: absolute;
+	top: 48%;
+	width: 100%;
+	color: #222222;
+	display: none;
+}
+
+.loader .approvedNotification h3 {
+	font-weight: 300;
+	font-size: 21px;
+	margin-bottom: 5px;
+}
+
+.loader .approvedNotification p {
+	font-size: 16px;
+	font-weight: 300;
+}
+
+.loader .approvedNotification button.cancelBtn {
+	background: none;
+	border: none;
+	/* padding: 8px 25px; */
+	border-radius: 25px;
+	color: #9c9c9c;
+	cursor: pointer;
+	margin-top: 7px;
+}
+
+.loader .approvedNotification button.cancelBtn:disabled, .loader .approvedNotification button.cancelBtn[disabled]
+	{
+	opacity: 0.6;
+	cursor: auto;
+}
+
+.inputField:focus+.placeHolderText, .inputField:not(:placeholder-shown)+.placeHolderText
+	{
+	opacity: 1;
+	transform: scale(0.70) translateY(-100%) translateX(-40px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextCardNum, .inputField:not(:placeholder-shown)+.placeHolderText.placeHolderTextCardNum
+	{
+	transform: scale(0.70) translateY(-110%) translateX(-34px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextCvv, .inputField:not(:placeholder-shown)+.placeHolderText.placeHolderTextCvv
+	{
+	transform: scale(0.70) translateY(-100%) translateX(-20px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextNameOnCard,
+	.inputField:not(:placeholder-shown)+.placeHolderText.placeHolderTextNameOnCard
+	{
+	transform: scale(0.70) translateY(-100%) translateX(-35px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextVPA, .inputField:not(:placeholder-shown)+.placeHolderText.placeHolderTextVPA
+	{
+	transform: scale(0.70) translateY(-108%) translateX(-52px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextVPAName, .inputField:not(:placeholder-shown)+.placeHolderText.placeHolderTextVPAName
+	{
+	transform: scale(0.70) translateY(-100%) translateX(-20px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextgooglePay, .inputField:not(:placeholder-shown)+.placeHolderText.placeHolderTextgooglePay
+	{
+	transform: scale(0.70) translateY(-117%) translateX(-37px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextExpDate, .inputField:not(:placeholder-shown)+.placeHolderText.placeHolderTextExpDate
+	{
+	transform: scale(0.70) translateY(-100%) translateX(-19px);
+}
+
+.inputField:focus+.placeHolderText, .inputField:not(:-ms-input-placeholder)+.placeHolderText
+	{
+	transform: scale(0.70) translateY(-100%) translateX(-40px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextCardNum, .inputField:not(:-ms-input-placeholder)+.placeHolderText.placeHolderTextCardNum
+	{
+	transform: scale(0.70) translateY(-110%) translateX(-34px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextCvv, .inputField:not(:-ms-input-placeholder)+.placeHolderText.placeHolderTextCvv
+	{
+	transform: scale(0.70) translateY(-100%) translateX(-20px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextNameOnCard,
+	.inputField:not(:-ms-input-placeholder)+.placeHolderText.placeHolderTextNameOnCard
+	{
+	transform: scale(0.70) translateY(-100%) translateX(-35px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextVPA, .inputField:not(:-ms-input-placeholder)+.placeHolderText.placeHolderTextVPA
+	{
+	transform: scale(0.70) translateY(-108%) translateX(-52px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextVPAName, .inputField:not(:-ms-input-placeholder)+.placeHolderText.placeHolderTextVPAName
+	{
+	transform: scale(0.70) translateY(-100%) translateX(-20px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextgooglePay, .inputField:not(:-ms-input-placeholder)+.placeHolderText.placeHolderTextgooglePay
+	{
+	transform: scale(0.70) translateY(-117%) translateX(-37px);
+}
+
+.inputField:focus+.placeHolderText.placeHolderTextExpDate, .inputField:not(:-ms-input-placeholder)+.placeHolderText.placeHolderTextExpDate
+	{
+	transform: scale(0.70) translateY(-100%) translateX(-19px);
+}
+
+@media all and (-ms-high-contrast: none) , ( -ms-high-contrast : active)
+	{
+	img.info {
+		right: 20px;
+	}
+}
+
+@media screen and (max-width: 1400px) {
+	#article {
+		min-height: 500px;
+	}
+}
+
+@media screen and (max-width: 1250px) {
+	.savedCards li {
+		width: 48%;
+	}
+}
+
+@media screen and (max-width: 1170px) {
+	img.info {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	#paymentTabs {
+		width: 18%;
+	}
+	.leftOrder {
+		display: none;
+	}
+	.rightOrder {
+		width: 100%;
+	}
+	.logo {
+		width: 17%;
+	}
+	.paymentSections {
+		width: 53%;
+	}
+	#sidebar {
+		width: 28%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	#paymentTabs {
+		width: 58%;
+		margin-right: 0;
+		border-right: 0;
+		margin-bottom: 15px;
+	}
+	.paymentSections {
+		padding-top: 0;
+	}
+	#gpayLi img {
+		width: 37px;
+	}
+	#paymentTabs ul li.activeLi {
+		border-right: none;
+		border-bottom: 2px solid #012f6f;
+	}
+	.paymentNavs {
+		right: 0;
+	}
+	.paymentSections {
+		width: 60%;
+		float: left;
+		padding-left: 0;
+		border-left: none;
+	}
+	#sidebar {
+		width: 40%;
+		font-size: 13px;
+	}
+	.paymentNavs li {
+		padding: 10px;
+		display: inline-block;
+		text-align: center;
+		font-size: 12px;
+	}
+	.active1 {
+		border: none;
+	}
+	.upiBox input[type='text'] {
+		width: 70%;
+	}
+}
+
+@media only screen and (max-width : 865px) {
+	#paymentTabs ul li.activeLi {
+		font-weight: normal;
+	}
+	.savedCards li {
+		width: 60%;
+	}
+}
+
+@media only screen and (max-width : 800px) {
+	#sidebar dl {
+		padding: 15px;
+	}
+}
+
+@media only screen and (max-width : 768px) {
+	#article {
+		min-height: auto;
+	}
+	.logo {
+		width: 21%;
+	}
+}
+
+@media only screen and (max-width : 680px) {
+	.sliderbar_inner, .orderSum {
+		display: none;
+	}
+	.PhoneOrderSumry {
+		display: block;
+	}
+	#sidebar {
+		background: none;
+		border-radius: 6px;
+		margin-top: 4px !important;
+	}
+	.returnMerchand a {
+		margin-left: 0;
+	}
+	.left-footer {
+		margin: 10px auto;
+		float: none;
+	}
+	.right-footer2 {
+		width: 145px;
+		float: left;
+	}
+	.right-footer {
+		text-align: center;
+	}
+	.paylogo {
+		margin-left: 10px;
+	}
+	.payment-btn, .btn-active {
+		display: block;
+		margin: 0 auto;
+	}
+	.autoDebitInner, .iMudraInner {
+		margin: 0 auto 20px;
+	}
+	.payment-btn-autoDebit, .payment-btn-iMudra {
+		margin: 0 auto;
+		display: block;
+	}
+	.radioErrorDiv {
+		text-align: center;
+	}
+	.saveDetailsReturn {
+		text-align: center;
+	}
+	.saveDetailsReturn .float-save {
+		float: none;
+		margin-top: 0px;
+	}
+	.paymentNavs {
+		overflow: hidden;
+		transition: all 500ms linear;
+		transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	}
+	#article {
+		padding: 0 0px 20px 0;
+	}
+	#header {
+		padding: 5px 0;
+	}
+	.desktopOrderFoot {
+		display: none;
+	}
+	.phoneOrderFoot {
+		display: block;
+	}
+	#sidebar dl {
+		margin: 0;
+		padding: 5px 15px;
+	}
+	#sidebar dl dd big {
+		font-size: 13px;
+	}
+	#sidebar dl dd {
+		margin-bottom: 3px;
+	}
+	.logo, .logo-ssn {
+		display: none;
+	}
+	.logoPhone {
+		display: block;
+	}
+	#paymentTabs, .paymentSections, #sidebar {
+		float: none;
+		width: 100%;
+		border: none;
+		margin-top: 10px;
+	}
+	#paymentTabs {
+		padding: 10px 0;
+		margin: 0;
+	}
+	.logo {
+		width: 25%;
+	}
+	.logo-ssn {
+		width: 30%;
+	}
+	.cardSection {
+		width: 100%;
+		margin: 0 auto;
+	}
+	.orderfootDetails {
+		text-align: center;
+	}
+	.returnMerchand a {
+		text-align: center;
+		display: block;
+		float: none;
+	}
+	.paymentNavs li {
+		margin-right: 0;
+	}
+	#paymentTabs ul li {
+		font-size: 12px;
+		border-right: 0;
+	}
+	#paymentTabs ul li.activeLi {
+		border-bottom: 2px solid #012f6f;
+		border-right: none;
+	}
+	#sidebar h2 {
+		padding: 9px;
+		font-size: 12px;
+	}
+	.upiBox input[type='text'], .googlePayBox input[type='number'] {
+		width: 100%;
+	}
+	.footerMob {
+		display: block;
+	}
+	.savedCards li {
+		width: 48%;
+		margin: 1%;
+	}
+	#divSaveCard, #mainCTAInfo {
+		text-align: center;
+	}
+	.returnMerchand a, .googlePayReturnMerchant a, .saveDetailsReturn a {
+		margin-left: 0;
+	}
+	.vpaPara {
+		width: 100%;
+		text-align: center;
+	}
+	.footer {
+		display: none;
+	}
+}
+
+@media only screen and (max-width : 590px) {
+	.btn-active {
+		display: block;
+		margin: 0 auto;
+	}
+	.left-footer {
+		float: none;
+	}
+}
+
+@media only screen and (max-width : 570px) {
+	.PhoneOrderSumry div span {
+		padding-left: 9%;
+	}
+	.logo {
+		width: 100%;
+	}
+	.btn-active {
+		display: block;
+		margin: 0 auto;
+	}
+	.loader .approvedNotification {
+		padding: 0 6%;
+	}
+	.loaderInner {
+		width: 100px;
+		height: 100px;
+		left: 52%;
+	}
+	.loader .approvedNotification h3 {
+		font-size: 18px;
+	}
+	.loader .approvedNotification p {
+		font-size: 15px;
+	}
+	.paylogo {
+		width: 65px;
+	}
+	.right-footer {
+		margin-bottom: 0;
+	}
+}
+
+@media only screen and (max-width : 500px) {
+	.savedCards li {
+		width: 70%;
+		margin: 1% auto;
+		float: none;
+	}
+}
+
+@media only screen and (max-width : 480px) {
+	.PhoneOrderSumry div span {
+		padding-left: 6%;
+	}
+	.logo img {
+		margin: 0 auto;
+		display: block;
+	}
+	.powered {
+		margin: 8px 0;
+		display: block;
+		text-align: center;
+	}
+	#paymentTabs ul li.activeLi {
+		font-weight: normal;
+	}
+}
+
+@media only screen and (max-width : 440px) {
+	.cardSection {
+		width: 100%;
+		padding-right: 0;
+	}
+	.savedCards li {
+		width: 75%;
+	}
+	.paymentNavs li {
+		padding: 5px;
+	}
+}
+
+@media only screen and (max-width : 360px) {
+	.PhoneOrderSumry div span:first-child {
+		width: 45%;
+	}
+	.savedCards li {
+		width: 90%;
+	}
+	.delete_cnf {
+		width: 260px;
+		margin-left: -130px;
+	}
+}
+
+.upiBox input[type='text'], .googlePayBox input[type='number'] {
+	border: none;
+	background: none;
+	width: 300px;
+	padding: 3px;
+	border-bottom: 2px solid #ddd;
+	box-shadow: none;
+	font-size: 18px;
+}
+
+.hideBox {
+	display: none !important;
+}
+
+.upiBox label {
+	color: #999;
+}
+
+.red1, .red2, .error1, .error2 {
+	color: red;
+	display: none;
+	font-size: 12px;
+}
+
+.vpaSection, .vpaName {
+	position: relative;
+}
+
+.vpaName {
+	margin-top: 20px;
+}
+
+div#tabGPAYUPI {
+	width: 100%;
+}
+
+.tab-content>.tab-pane {
+	margin-left: 0px;
+}
+
+.googlePayDiv {
+	padding: 20px 20px;
+}
+
+.paymentPage {
+	font-size: 13px;
+}
+
+.paymentPage p {
+	font-size: 13px;
+}
+
+.paymentPage .headertop {
+	height: 116px;
+	
+}
+
+.paymentPage .headertop .navbar.navbar-default {
+	
+	padding: 20px 0;
+}
+
+.paymentPage .headertop .navbar.navbar-default .navbar-right {
+	padding: 0 40px 0 20px;
+}
+
+.paymentPage .paymentPageBody {
+	background: #fff;
+	padding: 20px 30px 0px 30px;
+	border-radius: 4px;
+	border: 1px solid #e7e7e7;
+}
+
+.paymentPage .paymentPageBody .pageHeading {
+	border-bottom: 1px solid #e7e7e7;
+	padding: 0 0 0px 0;
+	
+}
+
+.paymentPage .paymentPageBody .pageHeading h4 {
+	font-size: 24px;
+}
+
+.paymentPage .paymentPageBody .pageHeading p {
+	font-size: 14px;
+}
+
+.paymentPageBody .paymentType {
+	border-bottom: 1px solid #e7e7e7;
+	padding: 0 0 0px 0;
+	
+}
+
+.paymentPageBody .paymentType.nav-pills li {
+	background: #f7f7f7;
+	border-radius: 10px;
+	text-transform: uppercase;
+	margin: 14px;
+	width: 180px;
+	position: relative;
+}
+
+.paymentType.nav-pills a {
+	color: #000;
+	font-size: 14px;
+	width: 100%;
+	padding: 14px;
+}
+
+.paymentType.nav-pills li:focus, .paymentType.nav-pills li:hover {
+	background: #e5effb;
+	font-weight: normal;
+}
+
+.paymentType.nav-pills li.active, .paymentType.nav-pills li.active:focus,
+	.paymentType.nav-pills li.active:hover {
+	background: #e5effb;
+	font-weight: bold;
+}
+
+.paymentType.nav-pills li.active::before {
+	content: '';
+	height: 100%;
+	width: 8px;
+	background: #0063db;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 8px;
+}
+
+.paymentPageBody .paymentType.nav-pills a {
+	display: block;
+	float: left;
+	background-color: transparent !important;
+	color: #000 !important;
+}
+
+.paymentPageBody .paymentType.nav-pills a:hover {
+	display: block;
+	float: left;
+	background-color: transparent !important;
+	color: #000 !important;
+}
+
+.paymentPageBody .paymentType .icon {
+	width: 36px;
+	height: 36px;
+	float: left;
+	margin-right: 14px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.paymentPageBody .paymentType .text {
+	height: 36px;
+	float: left;
+	width: 100px;
+}
+
+.paymentPageBody .paymentType .icon.cards {
+	background-image: url(../images/icons/cards.svg);
+}
+
+.paymentPageBody .paymentType .icon.bank {
+	background-image: url(../images/icons/bank.svg);
+}
+
+.paymentPageBody .paymentType .icon.upi {
+	background-image: url(../images/icons/upi.svg);
+}
+
+.paymentPageBody .paymentType .icon.wallet {
+	background-image: url(../images/icons/wallet.svg);
+}
+
+.paymentPageBody .BankLabel {
+	display: block;
+	width: 150px;
+	height: 50px;
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden; /* padding:20px; */
+	background: #fff;
+	border: #f7f7f7 1px solid;
+	float: left;
+	margin: 14px;
+}
+
+.paymentPageBody .BankLabel.active {
+	background: #e5effb;
+}
+
+.BankLabel.active::before {
+	content: '';
+	position: absolute;
+	top: -30px;
+	left: -40px;
+	width: 60px;
+	height: 60px;
+	background: #0063db;
+	transform: rotate(35deg);
+}
+
+.paymentPageBody .BankLabel label {
+	margin: -20px 0 0 0 !important;
+	height: 100%;
+	width: 100%;
+}
+
+.BankLabel input {
+	margin: 0;
+	padding: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.mobikwikWallet, .paytmWallet, .bhimWallet, .phonePeWallet,
+	.freechargeWallet, .olaMoneyWallet {
+	background-size: 70%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.mobikwikWallet {
+	background-image: url(../images/icons/Mobikwik.svg);
+}
+
+.paytmWallet {
+	background-image: url(../images/icons/Paytm.svg);
+}
+
+.bhimWallet {
+	background-image: url(../images/icons/BHIM.svg);
+}
+
+.phonePeWallet {
+	background-image: url(../images/icons/PhonePe.svg);
+}
+
+.freechargeWallet {
+	background-image: url(../images/icons/Freecharge.svg);
+}
+
+.olaMoneyWallet {
+	background-image: url(../images/icons/olaMoney.png);
+}
+
+.paymentPageBody .cardLabel {
+	display: block;
+	width: 100px;
+	height: 50px;
+	border-radius: 6px;
+	position: relative;
+	overflow: hidden; /* padding:20px; */
+	background: #fff;
+	border: #f7f7f7 1px solid;
+	float: left;
+	margin: 10px;
+}
+
+.paymentPageBody .cardLabel.active {
+	background: #e5effb;
+}
+
+.cardLabel.active::before {
+	content: '';
+	position: absolute;
+	top: -50px;
+	left: -36px;
+	width: 60px;
+	height: 60px;
+	background: #0063db;
+	transform: rotate(35deg);
+}
+
+.paymentPageBody .cardLabel label {
+	margin: -20px 0 0 0 !important;
+	height: 100%;
+	width: 100%;
+}
+
+.cardLabel input {
+	margin: 0;
+	padding: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.RuPay, .Alipay, .AmericanExpress, .Diners, .Discover, .Elo, .Hiper,
+	.Hipercard, .JCB, .Maestro, .MasterCard, .Mir, .PayPal, .UnionPay,
+	.Visa, .GenericCard, .SecurityCode {
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.RuPay {
+	background-image: url(../images/cardTypes/RuPay.svg);
+}
+
+.Alipay {
+	background-image: url(../images/cardTypes/alipay.svg);
+}
+
+.AmericanExpress {
+	background-image: url(../images/cardTypes/amex.svg);
+}
+
+.Diners {
+	background-image: url(../images/cardTypes/diners.svg);
+}
+
+.Discover {
+	background-image: url(../images/cardTypes/discover.svg);
+}
+
+.Elo {
+	background-image: url(../images/cardTypes/elo.svg);
+}
+
+.Hiper {
+	background-image: url(../images/cardTypes/hiper.svg);
+}
+
+.Hipercard {
+	background-image: url(../images/cardTypes/hipercard.svg);
+}
+
+.JCB {
+	background-image: url(../images/cardTypes/jcb.svg);
+}
+
+.Maestro {
+	background-image: url(../images/cardTypes/maestro.svg);
+}
+
+.MasterCard {
+	background-image: url(../images/cardTypes/mastercard.svg);
+}
+
+.Mir {
+	background-image: url(../images/cardTypes/mir.svg);
+}
+
+.PayPal {
+	background-image: url(../images/cardTypes/paypal.svg);
+}
+
+.UnionPay {
+	background-image: url(../images/cardTypes/unionpay.svg);
+}
+
+.Visa {
+	background-image: url(../images/cardTypes/visa.svg);
+}
+
+.GenericCard {
+	background-image: url(../images/cardTypes/generic.svg);
+}
+
+.SecurityCode {
+	background-image: url(../images/cardTypes/code.svg);
+}
+
+.paymentPageBody .bankLabel {
+	display: block;
+	width: 160px;
+	height: 50px;
+	border-radius: 6px;
+	position: relative;
+	overflow: hidden; /* padding:20px; */
+	background: #fff;
+	border: #f7f7f7 1px solid;
+	float: left;
+	margin: 10px;
+}
+
+.paymentPageBody .bankLabel.active {
+	background: #e5effb;
+}
+
+.bankLabel.active::before {
+	content: '';
+	position: absolute;
+	top: -50px;
+	left: -36px;
+	width: 60px;
+	height: 60px;
+	background: #0063db;
+	transform: rotate(35deg);
+}
+
+.paymentPageBody .bankLabel label {
+	margin: -20px 0 0 0 !important;
+	height: 100%;
+	width: 100%;
+}
+
+.bankLabel input {
+	margin: 0;
+	padding: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.axisBank, .HDFCBank, .ICICIBank, .KotakBank {
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.SBIBank {
+	background-size: 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.axisBank {
+	background-image: url(../images/bankLogo/Axis_Bank_logo.svg);
+}
+
+.HDFCBank {
+	background-image: url(../images/bankLogo/HDFC_Bank_Logo.svg);
+}
+
+.ICICIBank {
+	background-image: url(../images/bankLogo/ICICI_Bank_Logo.svg);
+}
+
+.KotakBank {
+	background-image: url(../images/bankLogo/kotak_Bank.svg);
+}
+
+.SBIBank {
+	background-image: url(../images/bankLogo/State_Bank_of_India_logo.svg);
+}
+
+.cutomeInput {
+	border: 1px solid #eaeaea;
+	border-radius: 6px;
+	padding: 12px 20px;
+}
+
+.cutomeInput label {
+	margin-top: 0;
+	color: #a9a9a9;
+	font-size: 12px;
+}
+
+.cutomeInput input, .cutomeInput select {
+	border: transparent;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0;
+}
+
+.cutomeInput select:focus, .cutomeInput input:focus {
+	outline: 0px !important;
+	box-shadow: none !important;
+}
+
+.paymentPageFooter {
+	margin: 10px 0;
+	border-top: 1px solid #e7e7e7;
+	padding-top: 20px;
+}
+
+.btnPayment {
+	margin: 8px;
+}
+
+.btnPayment.btn-primary {
+	background: #0063db;
+	border: 1px solid #0063db;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.btnPayment.btn-default {
+	background: #f7f7f7;
+	border: 1px solid #f7f7f7;
+	color: #000;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.show {
+	display: block !important;
+}
+
+.hide {
+	display: none !important;
+}
+
+.mrB20 {
+	margin-bottom: 20px;
+}
+
+.mrB30 {
+	margin-bottom: 30px;
+}
+
+.mrB40 {
+	margin-bottom: 40px;
+}
+
+.fullHeightWidth {
+	height: 100%;
+	width: 100%;
+}
+
+.displayTable {
+	display: table;
+}
+
+.tableCell {
+	display: table-cell;
+}
+
+.textMiddle {
+	vertical-align: middle;
+}
+
+.textBold {
+	font-weight: bold;
+}
