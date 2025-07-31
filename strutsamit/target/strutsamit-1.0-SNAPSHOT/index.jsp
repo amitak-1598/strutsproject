@@ -1,35 +1,43 @@
+<%@ page import="java.util.Random"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page import="com.project.strutsamit.util.PropertiesManager"%>
+<%@page import="com.project.strutsamit.common.UserDao"%>
+<%@page import="java.net.URL"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="refresh" content="899;url=index" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>Login</title>
+
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/logo.png" />
+  <title>payvang - Priority Login</title>
+
+  <script src="${pageContext.request.contextPath}/js/login.js"></script>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="webapp/../assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" />
 
-  <!-- Font Awesome CSS -->
-  <link rel="stylesheet" href="webapp/../assets/plugins/fontawesome/css/fontawesome.min.css" />
-  <link rel="stylesheet" href="webapp/../assets/plugins/fontawesome/css/all.min.css" />
+  <!-- Fontawesome CSS -->
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/fontawesome/css/fontawesome.min.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/plugins/fontawesome/css/all.min.css" />
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="webapp/../assets/css/style.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/style.css" />
 
   <!-- reCAPTCHA -->
   <script src="https://www.google.com/recaptcha/api.js"></script>
 
   <script>
-    if (self === top) {
-      document.body.style.display = "block";
+    if (self == top) {
+      var theBody = document.getElementsByTagName('body')[0];
+      if (theBody != null) {
+        theBody.style.display = "block";
+      }
     } else {
       top.location = self.location;
-    }
-
-    function ValidCaptcha() {
-      // Add client-side captcha validation logic here
-      return true;
     }
   </script>
 </head>
@@ -39,7 +47,7 @@
     <div class="login-wrapper">
       <div class="container">
 
-        <img class="img-fluid logo-dark mb-2" src="webapp/../images/logo.png" alt="Logo" />
+        <img class="img-fluid logo-dark mb-2" src="${pageContext.request.contextPath}/images/logo.png" alt="Logo" />
 
         <div class="loginbox">
           <div class="login-right">
@@ -47,22 +55,33 @@
               <h1>Login</h1>
               <p class="account-subtitle">Access to our dashboard</p>
 
-              <form method="post" onsubmit="return ValidCaptcha();">
+              <s:form name=" " action="login" method="post" onselectstart="return false" oncontextmenu="return false;">
+                <s:token />
                 <br />
+                <span id="merchantEnviroment"></span>
+                <div><span><s:actionmessage /></span></div>
+
                 <div class="form-group">
-                  <label class="form-control-label" for="emailId">Username</label>
-                  <input type="text" class="form-control" id="emailId" name="emailId"
-                    placeholder="Enter your username" autocomplete="off" required />
+                  <label class="form-control-label" for="username">Username</label>
+                  <s:textfield name="emailId" type="text" cssClass="form-control"
+                    id="emailId" placeholder="Enter your username"
+                    autocomplete="off" required="required"
+                    onkeypress="emailCheck()" />
                   <span id="error2"></span>
                 </div>
 
                 <div class="form-group">
-                  <label class="form-control-label" for="password">Password</label>
+                  <label class="form-control-label" for="username">Password</label>
                   <div class="pass-group">
-                    <input type="password" class="form-control pass-input" id="password" name="password"
-                      placeholder="Enter your password" autocomplete="off" required />
+                    <s:textfield name="password" type="password" cssClass="form-control pass-input"
+                      id="password" placeholder="Enter your password"
+                      autocomplete="off" required="required" onkeypress="passCheck()" />
+                    <span class=""></span>
+                    <span id="error2"></span>
                   </div>
                 </div>
+
+                <div class="rederror" id="error3"></div>
 
                 <div class="g-recaptcha" data-sitekey="6LfouiUqAAAAAN8fHjvb5GrgEkdPWC2fioTpuEQc"></div>
 
@@ -74,22 +93,29 @@
                   </div>
                 </div>
 
-                <button type="submit" class="btn btn-lg btn-block btn-primary">LOGIN</button>
-              </form>
+                <div>
+                  <s:fielderror class="redvalid">
+                    <s:param>userId</s:param>
+                    <s:param>password</s:param>
+                  </s:fielderror>
 
+                  <s:submit cssClass="btn btn-lg btn-block btn-primary" key="submit"
+                    value="LOGIN" onclick="return ValidCaptcha();"/>
+                </div>
+              </s:form>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
 
   <!-- Scripts -->
-  <script src="webapp/../assets/js/jquery-3.5.1.min.js"></script>
-  <script src="webapp/../assets/js/popper.min.js"></script>
-  <script src="webapp/../assets/js/bootstrap.min.js"></script>
-  <script src="webapp/../assets/js/feather.min.js"></script>
-  <script src="webapp/../assets/js/script.js"></script>
+  <script src="${pageContext.request.contextPath}/assets/js/jquery-3.5.1.min.js"></script>
+  <script src="${pageContext.request.contextPath}/assets/js/popper.min.js"></script>
+  <script src="${pageContext.request.contextPath}/assets/js/bootstrap.min.js"></script>
+  <script src="${pageContext.request.contextPath}/assets/js/feather.min.js"></script>
+  <script src="${pageContext.request.contextPath}/assets/js/script.js"></script>
 </body>
 </html>
-
