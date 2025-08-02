@@ -1,37 +1,35 @@
 package com.project.strutsamit.common.dao;
 
 import java.io.File;
-
-//import org.apache.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
-import com.project.model.HelpTicket;
-import com.project.model.TicketComment;
 import com.project.strutsamit.common.Account;
 import com.project.strutsamit.common.AccountCurrency;
 import com.project.strutsamit.common.ChargingDetails;
+import com.project.strutsamit.common.LoginHistory;
 import com.project.strutsamit.common.Mop;
 import com.project.strutsamit.common.MopTransaction;
 import com.project.strutsamit.common.Payment;
 import com.project.strutsamit.common.Permissions;
 import com.project.strutsamit.common.Roles;
 import com.project.strutsamit.common.User;
+import com.project.strutsamit.common.WhitelableBranding;
+import com.project.strutsamit.model.HelpTicket;
+import com.project.strutsamit.model.TicketComment;
 import com.project.strutsamit.util.Constants;
 import com.project.strutsamit.util.PropertiesManager;
 
 
-/**
- * @author neeraj
- *
- */
+
 public class HibernateSessionProvider {
 	
-//	private static Logger logger = Logger.getLogger(HibernateSessionProvider.class
-//			.getName());
+	private static Logger logger = Logger.getLogger(HibernateSessionProvider.class
+			.getName());
 	private SessionFactory factory;
 
 	private static final String hbmddlAutoSettingName = "hibernate.hbm2ddl.auto";
@@ -50,10 +48,10 @@ public class HibernateSessionProvider {
                 .build();
 	try {
 			factory = new MetadataSources(registry).addAnnotatedClass(User.class)
-												//   .addAnnotatedClass(UserRecords.class)
+											//	   .addAnnotatedClass(UserRecords.class)
 												   .addAnnotatedClass(Roles.class)
 												   .addAnnotatedClass(Permissions.class)
-											//	   .addAnnotatedClass(LoginHistory.class)
+												   .addAnnotatedClass(LoginHistory.class)
 												   .addAnnotatedClass(Account.class)
 												   .addAnnotatedClass(Payment.class)
 												   .addAnnotatedClass(Mop.class)
@@ -83,12 +81,12 @@ public class HibernateSessionProvider {
 								//				   .addAnnotatedClass(NotificationDetail.class )
 								//				   .addAnnotatedClass(PendingMappingRequest.class)
 								//				   .addAnnotatedClass(RouterRule.class)
-								//				   .addAnnotatedClass(WhitelableBranding.class)
+												   .addAnnotatedClass(WhitelableBranding.class)
 								//				   .addAnnotatedClass(PayoutBalanceSheet.class)
 												   .buildMetadata().buildSessionFactory();
 
 		} catch (Exception exception) {
-		//	logger.error("Error creating hibernate session" + exception);
+			logger.error("Error creating hibernate session" + exception);
 			StandardServiceRegistryBuilder.destroy(registry);
 			throw exception;
 		}

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+
+	<defaultCache maxElementsInMemory="8000" eternal="true" />
+
+	<cache name="com.kbn.commons.user.User"
+		maxElementsInMemory="90000" eternal="true" />
+
+	<cache name="com.kbn.pg.fraudPrevention.model.FraudPrevention"
+		maxElementsInMemory="9000" eternal="true" />
+
+	<cache name="com.kbn.commons.user.Account"
+		maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="10000"
+		timeToLiveSeconds="20000" />
+
+	<cache name="com.kbn.commons.user.Roles"
+		maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="10000"
+		timeToLiveSeconds="20000" />
+
+	<cache name="com.kbn.commons.user.AccountCurrency"
+		maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="10000"
+		timeToLiveSeconds="20000" />
+
+	<cache name="com.kbn.commons.user.ChargingDetails"
+		maxElementsInMemory="1000" eternal="false" timeToIdleSeconds="10000"
+		timeToLiveSeconds="20000" />
+
+	<cache name="org.hibernate.cache.internal.StandardQueryCache"
+		maxElementsInMemory="5000" eternal="false" timeToLiveSeconds="12000">
+	</cache>
+
+	<cache name="query.userTable" maxElementsInMemory="100"
+		eternal="true" />
+	<cache name="query.accountCurrency" maxElementsInMemory="500"
+		eternal="true" />
+	<cache name="query.account" maxElementsInMemory="500"
+		eternal="true" />
+
+	<cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+		maxElementsInMemory="5000" eternal="true">
+	</cache>
+	<!-- <cache name="user" maxEntriesLocalHeap="50000" eternal="true" /> -->
+
+</ehcache>

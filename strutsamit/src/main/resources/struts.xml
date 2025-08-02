@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
-        "http://struts.apache.org/dtds/struts-2.5.dtd">
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
 <struts>
-    <package name="default" extends="struts-default">
+    <package name="default" namespace="/" extends="struts-default">
+
         <action name="hello" class="com.project.strutsamit.HelloAction">
             <result>/hello.jsp</result>
         </action>
+
+        <action name="login" class="com.project.strutsamit.crm.action.LoginAction">
+            <result name="redirect" type="redirect">${redirectUrl}</result>
+            <result name="input">/jsp/index.jsp</result>
+            <result name="success" type="redirect">home</result>
+            <result name="invalid.token">/jsp/index.jsp</result>
+            <result name="error">/jsp/index.jsp</result>
+        </action>
+
+        <action name="home" class="com.project.strutsamit.crm.action.IndexAction" method="authoriseUser">
+            <result name="wait">loading.jsp</result>                     
+            <result name="merchant">/jsp/welcome.jsp</result>         
+            <result name="admin">/jsp/welcomeAdmin.jsp</result>
+            <result name="login" type="redirect">login</result>
+        </action>
+
     </package>
 </struts>

@@ -2,10 +2,10 @@ package com.project.strutsamit.util;
 
 import java.util.UUID;
 
-import com.project.model.HelpTicket;
-import com.project.model.TicketComment;
-import com.project.model.TicketStatus;
-import com.project.model.TicketType;
+import com.project.strutsamit.model.HelpTicket;
+import com.project.strutsamit.model.TicketComment;
+import com.project.strutsamit.model.TicketStatus;
+import com.project.strutsamit.model.TicketType;
 
 public class HelpTicketMain {
 

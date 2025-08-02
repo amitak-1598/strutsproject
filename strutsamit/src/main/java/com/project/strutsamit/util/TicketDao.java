@@ -3,7 +3,7 @@ package com.project.strutsamit.util;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import com.project.model.HelpTicket;
+import com.project.strutsamit.model.HelpTicket;
 
 public class TicketDao {
 

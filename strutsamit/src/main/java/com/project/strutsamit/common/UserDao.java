@@ -13,7 +13,7 @@ import java.util.Map;
 
 import javax.persistence.NoResultException;
 
-//import org.apache.log4j.Logger;
+import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.ObjectNotFoundException;
 
@@ -29,7 +29,7 @@ import com.project.strutsamit.util.UserStatusType;
 
 public class UserDao extends HibernateAbstractDao {
 
-//	private static Logger logger = Logger.getLogger(UserDao.class.getName());
+	private static Logger logger = Logger.getLogger(UserDao.class.getName());
 
 	public UserDao() {
 		super();
@@ -76,13 +76,13 @@ public class UserDao extends HibernateAbstractDao {
 	}
 
 	// whitelabel partner
-//	public void create(WhitelableBranding whitelabelUser) throws DataAccessLayerException {
-//		super.save(whitelabelUser);
-//	}
-//
-//	public void update(WhitelableBranding branding) throws DataAccessLayerException {
-//		super.saveOrUpdate(branding);
-//	}
+	public void create(WhitelableBranding whitelabelUser) throws DataAccessLayerException {
+		super.save(whitelabelUser);
+	}
+
+	public void update(WhitelableBranding branding) throws DataAccessLayerException {
+		super.saveOrUpdate(branding);
+	}
 
 	public void delete(User User) throws DataAccessLayerException {
 		super.delete(User);
@@ -167,7 +167,7 @@ public class UserDao extends HibernateAbstractDao {
 		} catch (ObjectNotFoundException objectNotFound) {
 			handleException(objectNotFound);
 		} catch (HibernateException hibernateException) {
-//			logger.error(hibernateException);
+			logger.error(hibernateException);
 			handleException(hibernateException);
 		} finally {
 			autoClose();
@@ -189,7 +189,7 @@ public class UserDao extends HibernateAbstractDao {
 		} catch (ObjectNotFoundException objectNotFound) {
 			handleException(objectNotFound);
 		} catch (HibernateException hibernateException) {
-//			logger.error(hibernateException);
+			logger.error(hibernateException);
 			handleException(hibernateException);
 		} finally {
 			autoClose();
@@ -212,7 +212,7 @@ public class UserDao extends HibernateAbstractDao {
 		} catch (ObjectNotFoundException objectNotFound) {
 			handleException(objectNotFound);
 		} catch (HibernateException hibernateException) {
-//			logger.error(hibernateException);
+			logger.error(hibernateException);
 			handleException(hibernateException);
 		} finally {
 			autoClose();
@@ -971,7 +971,7 @@ public class UserDao extends HibernateAbstractDao {
 				}
 			}
 		} catch (SQLException exception) {
-//			logger.error("Database error", exception);
+			logger.error("Database error", exception);
 			throw new SystemException(ErrorType.DATABASE_ERROR, ErrorType.DATABASE_ERROR.getResponseMessage());
 		}
 		return merchants;
@@ -1070,51 +1070,51 @@ public class UserDao extends HibernateAbstractDao {
 //
 //	}
 //
-//	protected WhitelableBranding findByWhitelabelAppId(String appId1) {
-//
-//		WhitelableBranding responseBrandingUser = null;
-//		try {
-//			startOperation();
-//			responseBrandingUser = (WhitelableBranding) getSession()
-//					.createQuery(getCompleteWhitelabelUserWithappIdQuery).setParameter("appId", appId1)
-//					.setCacheable(true).getSingleResult();
-//			getTx().commit();
-//			return responseBrandingUser;
-//		} catch (NoResultException noResultException) {
-//			return null;
-//		} catch (ObjectNotFoundException objectNotFound) {
-//			handleException(objectNotFound);
-//		} catch (HibernateException hibernateException) {
-//			logger.error(hibernateException);
-//			handleException(hibernateException);
-//		} finally {
-//			autoClose();
-//		}
-//		return responseBrandingUser;
-//	}
-//
-//	public WhitelableBranding findByWhitelabelBrandURL(String brandURLTmp) {
-//
-//		WhitelableBranding responseBrandingUser = null;
-//		try {
-//			startOperation();
-//			responseBrandingUser = (WhitelableBranding) getSession()
-//					.createQuery(getCompleteWhitelabelUserWithBrandURLQuery).setParameter("brandURL", brandURLTmp)
-//					.setCacheable(true).getSingleResult();
-//			getTx().commit();
-//			return responseBrandingUser;
-//		} catch (NoResultException noResultException) {
-//			return null;
-//		} catch (ObjectNotFoundException objectNotFound) {
-//			handleException(objectNotFound);
-//		} catch (HibernateException hibernateException) {
-//			logger.error(hibernateException);
-//			handleException(hibernateException);
-//		} finally {
-//			autoClose();
-//		}
-//		return responseBrandingUser;
-//	}
+	protected WhitelableBranding findByWhitelabelAppId(String appId1) {
+
+		WhitelableBranding responseBrandingUser = null;
+		try {
+			startOperation();
+			responseBrandingUser = (WhitelableBranding) getSession()
+					.createQuery(getCompleteWhitelabelUserWithappIdQuery).setParameter("appId", appId1)
+					.setCacheable(true).getSingleResult();
+			getTx().commit();
+			return responseBrandingUser;
+		} catch (NoResultException noResultException) {
+			return null;
+		} catch (ObjectNotFoundException objectNotFound) {
+			handleException(objectNotFound);
+		} catch (HibernateException hibernateException) {
+			logger.error(hibernateException);
+			handleException(hibernateException);
+		} finally {
+			autoClose();
+		}
+		return responseBrandingUser;
+	}
+
+	public WhitelableBranding findByWhitelabelBrandURL(String brandURLTmp) {
+
+		WhitelableBranding responseBrandingUser = null;
+		try {
+			startOperation();
+			responseBrandingUser = (WhitelableBranding) getSession()
+					.createQuery(getCompleteWhitelabelUserWithBrandURLQuery).setParameter("brandURL", brandURLTmp)
+					.setCacheable(true).getSingleResult();
+			getTx().commit();
+			return responseBrandingUser;
+		} catch (NoResultException noResultException) {
+			return null;
+		} catch (ObjectNotFoundException objectNotFound) {
+			handleException(objectNotFound);
+		} catch (HibernateException hibernateException) {
+			logger.error(hibernateException);
+			handleException(hibernateException);
+		} finally {
+			autoClose();
+		}
+		return responseBrandingUser;
+	}
 
 	// get reseller appId for Branding
 	public String getResellerAppId(String resellerId) throws SystemException {
